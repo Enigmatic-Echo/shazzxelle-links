@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #0a0a0a;
+            background: linear-gradient(135deg, #ffffff 0%, #ffe5e5 25%, #ffcccc 50%, #ff9999 75%, #ff6666 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -30,8 +30,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
             pointer-events: none;
             animation: pulse 8s ease-in-out infinite;
         }
@@ -82,7 +82,7 @@
             right: -10px;
             bottom: -10px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #ff0000, #ff6b6b, #ff0000, #8b0000);
+            background: linear-gradient(45deg, #ff0000, #ff6b6b, #ffffff, #ff0000);
             background-size: 300% 300%;
             animation: gradientRotate 3s ease infinite;
             z-index: -1;
@@ -116,7 +116,7 @@
             display: block;
             transition: all 0.4s ease;
             box-shadow: 0 10px 40px rgba(255, 0, 0, 0.3),
-                        0 0 30px rgba(255, 255, 255, 0.2);
+                        0 0 30px rgba(255, 255, 255, 0.5);
             filter: brightness(1.1) contrast(1.05);
         }
 
@@ -124,29 +124,31 @@
             transform: scale(1.08);
             border-color: #ff0000;
             box-shadow: 0 15px 50px rgba(255, 0, 0, 0.5),
-                        0 0 40px rgba(255, 255, 255, 0.3);
+                        0 0 40px rgba(255, 255, 255, 0.6);
         }
 
         .profile h1 {
-            color: #ffffff;
+            color: #cc0000;
             font-size: 36px;
             margin-bottom: 15px;
             font-weight: 700;
             letter-spacing: 2px;
             text-align: center;
-            background: linear-gradient(135deg, #ffffff 0%, #ff0000 100%);
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 2px 10px rgba(255, 0, 0, 0.1);
         }
 
         .profile p {
-            color: rgba(255,255,255,0.85);
+            color: #4a0000;
             font-size: 15px;
             line-height: 1.7;
             max-width: 500px;
             margin: 0 auto;
             text-align: center;
+            font-weight: 500;
         }
 
         .links {
@@ -156,21 +158,21 @@
         }
 
         .link {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
             padding: 20px 28px;
             border-radius: 16px;
             text-decoration: none;
-            color: #ffffff;
+            color: #cc0000;
             font-weight: 600;
             font-size: 15px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
             display: block;
             text-align: center;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.9);
             opacity: 0;
             animation: slideIn 0.5s ease forwards;
         }
@@ -191,7 +193,6 @@
         .link:nth-child(3) { animation-delay: 0.3s; }
         .link:nth-child(4) { animation-delay: 0.4s; }
         .link:nth-child(5) { animation-delay: 0.5s; }
-        .link:nth-child(6) { animation-delay: 0.6s; }
 
         .link::before {
             content: '';
@@ -200,7 +201,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.2), transparent);
             transition: left 0.6s ease;
         }
 
@@ -210,9 +211,9 @@
 
         .link:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
+            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.35);
             border-color: rgba(255, 0, 0, 0.5);
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .link:active {
@@ -220,12 +221,12 @@
         }
 
         .link.promo {
-            background: linear-gradient(135deg, #ff0000 0%, #8b0000 100%);
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
             color: white;
             font-size: 16px;
             padding: 22px 28px;
-            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -237,7 +238,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
             transform: rotate(45deg);
             animation: shine 3s infinite;
         }
@@ -248,9 +249,9 @@
         }
 
         .link.promo:hover {
-            background: linear-gradient(135deg, #cc0000 0%, #660000 100%);
+            background: linear-gradient(135deg, #ee0000 0%, #bb0000 100%);
             transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 12px 35px rgba(255, 0, 0, 0.6);
+            box-shadow: 0 12px 35px rgba(255, 0, 0, 0.5);
         }
 
         .link-emoji {
@@ -267,10 +268,11 @@
         .footer {
             text-align: center;
             margin-top: 45px;
-            color: rgba(255,255,255,0.5);
+            color: rgba(100, 0, 0, 0.6);
             font-size: 13px;
             opacity: 0;
             animation: fadeIn 1s ease 0.7s forwards;
+            font-weight: 500;
         }
 
         @keyframes fadeIn {
@@ -305,7 +307,7 @@
                 <img src="https://i.imgur.com/JoWjaBR.jpeg" alt="ShazzXelle" class="profile-img">
             </div>
             <h1>ShazzXelle</h1>
-            <p>Saya menjual produk digital yang diperlukan oleh semua orang dan membantu sesiapa yang ingin membina side income secara fleksibel.</p>
+            <p>Saya berkongsi produk digital berkualiti dan peluang untuk membina pendapatan sampingan secara fleksibel.</p>
         </div>
 
         <div class="links">
@@ -327,10 +329,6 @@
 
             <a href="https://wa.me/601165067817?text=Nak%20tau%20info%20ChatGPT" class="link">
                 <span class="link-emoji">💬</span>ChatGPT Go or Plus
-            </a>
-
-            <a href="https://www.shouttheshush.com" class="link">
-                <span class="link-emoji">🌐</span>Shout The Shush
             </a>
         </div>
 
